@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess Game</title>
+    <style>
+        body{
+            font-weight: bold;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Guess the number Game</h1>
+    <button onclick="printtext()">start Game</button>
+    <p id="text1"></p>
+    <p id="text2"></p>
+    <p id="text3"></p>
+    <p id="text4"></p>
+    <p id="text5"></p>
+
+    <p id="text6"></p>
+    <script>
+        var txt,x,y1,y2,y3,y4,y5;
+        function printtext()
+ {
+           txt= prompt("Enter a number between 1 and 100");
+           x=txt;
+           if(x>=1 && x<=100)
+    {
+        //    1st time
+           var y1=Math.floor(Math.random()*100 + 1);
+           document.getElementById("text1").innerHTML= "Computer Guessed "+ y1 + "";
+        //    2nd time
+        var y2=Math.floor(Math.random()*100 + 1);
+           document.getElementById("text2").innerHTML= "Computer Guessed "+ y2 + "";
+        // 3rd time
+        var y3=Math.floor(Math.random()*100 + 1);
+           document.getElementById("text3").innerHTML= "Computer Guessed "+ y3 + "";
+        //    4th time
+        var y4=Math.floor(Math.random()*100 + 1);
+           document.getElementById("text4").innerHTML= "Computer Guessed "+ y4 + "";
+        // 5th time
+        var y5=Math.floor(Math.random()*100 + 1);
+           document.getElementById("text5").innerHTML= "Computer Guessed "+ y5 + "";
+
+        //    condition check who wins
+        if(x==y1 || x==y2 || x==y3 || x==y4 || x==y5 )
+        {
+            document.getElementById("text6").innerHTML ="computer wins";
+        }
+        else
+        {
+            document.getElementById("text6").innerHTML ="You wins";
+        }
+    } 
+    else
+    alert("Invalid Input");  
+}       
+
+    </script>
+</body>
+</html>
